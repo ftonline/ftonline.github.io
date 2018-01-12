@@ -46,11 +46,13 @@
         	<script src="app/app.config.js"></script>
 
     </head>
-    <body dir="rtl" ng-app="myApp">
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
-		<a href="#" onclick="signOut();">Sign out</a>
-		<a href="#!green">green</a>
-		<a href="#!red">red</a>
-		<div ng-view></div>
-    </body>
+	<body dir="rtl" ng-app="myApp">
+		<div class="container">
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<a href="#" onclick="signOut();">Sign out</a>
+			<a href="#!green">green</a>
+			<a href="#!red">red</a>
+			<div ng-view></div>
+		</div>
+	</body>
 </html>
