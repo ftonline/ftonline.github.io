@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="makoletApp">
+<html>
     <head>
         <title>טורניר פיפא אונליין</title>
         <meta charset="utf-8">
@@ -36,10 +36,21 @@
 				});*/
 			}
 		</script>
+
+		<!--angular-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+		
+		<script src="app/app.module.js"></script>
+        	<script src="app/app.config.js"></script>
+
     </head>
-    <body dir="rtl">
+    <body dir="rtl" ng-app="myApp">
 		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		<a href="#" onclick="signOut();">Sign out</a>
-		אנריי הלוזר!!!!!!
+		<a href="#!green">green</a>
+		<a href="#!red">red</a>
+		<div ng-view></div>
     </body>
 </html>
