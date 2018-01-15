@@ -1,4 +1,5 @@
 var signInHttp;
+var signInScope;
 
 angular.
   module('signIn').
@@ -12,6 +13,8 @@ angular.
       }
 
       signInHttp = $http;
+      signInScope = $scope;
+      signInScope.isSinedIn = false;
 
       gapi.signin2.render('g-signin2', options)
     }
@@ -22,6 +25,7 @@ angular.
 
 
 function onSignIn(googleUser) {
+  signInScope.isSinedIn = true;
   var profile = googleUser.getBasicProfile();
   console.log(profile);
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -37,11 +41,13 @@ function onSignIn(googleUser) {
   signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec', data)
     .then(function(response){
       console.log(response.data);
+      signInScope.userName = response.data.firstName;
     });
 }
 
 
 function signOut() {
+  signInScope.isSinedIn = false;
 	var auth2 = gapi.auth2.getAuthInstance();
 	auth2.disconnect();
 }

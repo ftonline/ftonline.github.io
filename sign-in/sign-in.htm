@@ -1,4 +1,5 @@
 <div class="container">
-	<div id="g-signin2" data-onsuccess="onSignIn"></div>
-	<a href="#" onclick="signOut();">Sign out</a>
+	<p ng-show="isSinedIn">שלום {{userName}}</p>
+	<div id="g-signin2" data-onsuccess="onSignIn" ng-hide="isSinedIn"></div>
+	<a href="#" onclick="signOut();" ng-show="isSinedIn">Sign out</a>
 </div>
