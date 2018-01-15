@@ -10,7 +10,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
-		
+		<!--google-signin-->
+		<meta name="google-signin-client_id" content="566387118967-mj1o2jd61ra475g3ql29qkvrv6htrh7m.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 		<!--angular-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -27,21 +30,17 @@
         <script src="app/app.config.js?v=2"></script>
 
 
-		<!--google-signin-->
-		<meta name="google-signin-client_id" content="566387118967-mj1o2jd61ra475g3ql29qkvrv6htrh7m.apps.googleusercontent.com">
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-
+		
     </head>
 	<body dir="rtl" ng-app="myApp">
 		<div class="container">
 			<img src="https://user-images.githubusercontent.com/35330171/34945237-4c105e56-fa0b-11e7-8e0d-45c39b38f373.jpg" alt="hi" class="inline" style="height:auto;width:100%;max-width:100%"/>
 			<h1>ברוכים הבאים לטורנירי פיפא 18 אונליין!</h1>
 			<sign-in></sign-in>
-			
 			<a href="#!green">green</a>
 			<a href="#!red">red</a>
 			<div ng-view></div>
-			
+			<br/>
 		</div>
 	</body>
 </html>
