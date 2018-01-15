@@ -2,5 +2,5 @@
 	<p ng-show="isSinedIn">שלום {{userName}}</p>
 	<div id="g-signin2" data-onsuccess="onSignIn" ng-hide="isSinedIn"></div>
 	<button type="button" onclick="signOut()" ng-show="isSinedIn" class="btn btn-info">התנתק</button>
-	<button type="button" ng-show="isSinedIn" class="btn btn-info" ng-show="isSinedIn">ערוך</button>
+        <a class="btn btn-info" ng-show="isSinedIn" href="#!updateUser">ערוך</a>
 </div>

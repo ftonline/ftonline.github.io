@@ -1,5 +1,6 @@
 var signInHttp;
 var signInScope;
+var signInUser;
 
 angular.
   module('signIn').
@@ -47,9 +48,10 @@ function onSignIn(googleUser) {
 
 
 function signOut() {
+  signInScope.userName = '';
   signInScope.isSinedIn = false;
   signInScope.$apply();
-	var auth2 = gapi.auth2.getAuthInstance();
-	auth2.disconnect();
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.disconnect();
 }
 
