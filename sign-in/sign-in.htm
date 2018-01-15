@@ -1,5 +1,6 @@
 <div class="jumbotron">
 	<p ng-show="isSinedIn">שלום {{userName}}</p>
 	<div id="g-signin2" data-onsuccess="onSignIn" ng-hide="isSinedIn"></div>
-	<a href="#" onclick="signOut();" ng-show="isSinedIn">Sign out</a>
+	<button type="button" onclick="signOut()" ng-show="isSinedIn" class="btn btn-info">התנתק</button>
+	<button type="button" ng-show="isSinedIn" class="btn btn-info" ng-show="isSinedIn">ערוך</button>
 </div>
