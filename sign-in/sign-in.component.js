@@ -3,18 +3,18 @@ var signInHttp;
 angular.
   module('signIn').
   component('signIn', {
-        templateUrl : "sign-in/sign-in.htm",
-	controller : function ($scope, $http) {
-		var options = {
-		  width: 120,
-		  height: 50,
-		  onsuccess: onSignIn
-		}
+    templateUrl : "sign-in/sign-in.htm",
+    controller : function ($scope, $http) {
+      var options = {
+        width: 120,
+        height: 50,
+        onsuccess: onSignIn
+      }
 
-		signInHttp = $http;
+      signInHttp = $http;
 
-		gapi.signin2.render('g-signin2', options)
-	}
+      gapi.signin2.render('g-signin2', options)
+    }
   });
         
 
@@ -32,8 +32,12 @@ function onSignIn(googleUser) {
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
-
-  signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec',{'token':id_token});
+  
+  var data = {token:id_token};
+  signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec', data)
+    .then(function(response){
+      console.log(response.data);
+    });
 }
 
 
