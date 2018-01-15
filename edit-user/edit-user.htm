@@ -1,3 +1,23 @@
-<div>
-	<p>edit</p>
-</div>
+ <form>
+  <div class="form-group">
+    <label for="email">כתובת אימייל:</label>
+    <input disabled='true' ng-model="user.mail" type="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>שם:</label>
+    <input ng-model="user.firstName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>שם משפחה:</label>
+    <input ng-model="user.lastName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>פלאפון:</label>
+    <input ng-model="user.phone" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>שם משתמש של הפיפא:</label>
+    <input ng-model="user.fifaUser" type="text" class="form-control">
+  </div>
+  <button ng-click="submit()" type="submit" class="btn btn-default">עדכן</button>
+</form>
