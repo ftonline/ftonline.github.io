@@ -3,6 +3,9 @@ angular.module("myApp").config(function($routeProvider) {
     .when("/", {
         templateUrl : "app/main.htm"
     })
+    .when("/updateUser", {
+        template : "<edit-user></edit-user>"
+    })
     .when("/red", {
         templateUrl : "app/red.htm"
     })
