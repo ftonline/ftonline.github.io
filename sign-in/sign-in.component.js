@@ -51,6 +51,7 @@ function signOut() {
   signInScope.userName = '';
   signInScope.isSinedIn = false;
   signInScope.$apply();
+  window.location.href = '#!';
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.disconnect();
 }
