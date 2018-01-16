@@ -14,6 +14,7 @@ angular.
       }
 
       $scope.applicationData = applicationData;
+      applicationData.signInScope = $scope;
 
       signInHttp = $http;
       signInScope = $scope;
