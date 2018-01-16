@@ -13,6 +13,8 @@ angular.
         onsuccess: onSignIn
       }
 
+      $scope.applicationData = applicationData;
+
       signInHttp = $http;
       signInScope = $scope;
       signInScope.isSinedIn = false;
@@ -42,6 +44,7 @@ function onSignIn(googleUser) {
   signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec', data)
     .then(function(response){
       console.log(response.data);
+      applicationData.user = response.data;
       signInScope.userName = response.data.firstName;
     });
 }
