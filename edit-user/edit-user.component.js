@@ -5,6 +5,9 @@ angular.
     templateUrl : "edit-user/edit-user.htm",
     controller : function ($scope, $http) {
 			$scope.applicationData = applicationData;
+			$scope.cancel = function() {
+				window.location.href = '#!';
+			}
 
 			$scope.submit = function() {
 	  		var id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
