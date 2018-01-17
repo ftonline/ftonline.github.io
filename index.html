@@ -11,6 +11,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- Load Bootstrap RTL theme from RawGit -->
+		<link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
 		
 		<!--google-signin-->
 		<meta name="google-signin-client_id" content="566387118967-mj1o2jd61ra475g3ql29qkvrv6htrh7m.apps.googleusercontent.com">
@@ -40,14 +43,10 @@
     </head>
 	<body dir="rtl" ng-app="myApp">
 		<div class="container">
-			
 			<img src="https://user-images.githubusercontent.com/35330171/34977011-a4f1a020-faa1-11e7-92ef-31ad3ccf40a5.jpg" alt="hi" class="inline" style="height:auto;width:100%;max-width:100%"/>
 			<h1>ברוכים הבאים לטורנירי פיפא 18 אונליין!</h1>
 			<sign-in></sign-in>
-			<a href="#!green">green</a>
-			<a href="#!red">red</a>
 			<div ng-view></div>
-			<tournaments></tournaments>
 			<br/>
 		</div>
 	</body>

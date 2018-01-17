@@ -1,16 +1,12 @@
-<br/>
-<div class="card">
-  <div class="container">
-    <h4><b>טורניר אונליין לסוני</b></h4>
-    <p>הטורניר עבור 12 משתתפים המחולקים ל 20 ליגות</p>
-    <div class="container">
-      <a class="btn btn-info">הצטרף</a>
-      <a class="btn btn-info">פרטים</a>
-    </div>
-    <br/>
+
+<div class="col-sm-4" ng-repeat="tournament in tournaments track by $index">
+  <div class="card">
+    <h4><b>{{tournament.headLine}}</b></h4>
+    <p>{{tournament.content}}</p>
+    <a class="btn btn-info">הצטרף</a>
+    <a class="btn btn-info">פרטים</a>
   </div>
 </div>
-<div ng-show="false" ng-repeat="n in [42, 42, 43, 43] track by $index">
-  {{n}}
-</div>
 <br/>
+<br/>
+
