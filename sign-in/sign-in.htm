@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron container-fluid">
 	<p ng-show="isSinedIn">שלום {{userName}}</p>
 	<div id="g-signin2" data-onsuccess="onSignIn" ng-hide="isSinedIn"></div>
 	<button type="button" onclick="signOut()" ng-show="isSinedIn" class="btn btn-info">התנתק</button>
