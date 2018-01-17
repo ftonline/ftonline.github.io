@@ -6,7 +6,7 @@ angular.module("myApp").config(function($routeProvider) {
     .when("/updateUser", {
         template : "<edit-user></edit-user>"
     })
-    .when("/tournament", {
+    .when("/tournament/:tournamentId", {
         template : "<tournament></tournament>"
     })
     .when("/red", {
