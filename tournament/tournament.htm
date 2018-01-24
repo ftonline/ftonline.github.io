@@ -1,22 +1,31 @@
-<div class="container">
-  <h1>{{tournament.headLine}}</h1>
-  <p>{{tournament.content}}</p>
-  <p><b><u>תאריך:</u></b></p>
-  <div class="container">
-    <p>{{tournament.date}}</p>
-  </div>
-  <p><b><u>קונסולה:</u></b></p>
-  <div class="container">
-    <p>{{tournament.consoleType}}</p>
-  </div>
-  <p><b><u>רשימת הפרסים:</u></b></p>
-  <ul>
-    <li ng-repeat="trophy in tournament.trophys track by $index">{{trophy.headLine + ' ' + trophy.amount}} שח</li>
-  </ul>
-  <p><b><u>מחיר:</u></b></p>
-  <div class="container">
-    <p>{{tournament.price}}</p>
+<div class="container">  
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>{{tournament.headLine}}</h1>
+      <p>{{tournament.content}}</p>
+      <p><b><u>תאריך:</u></b></p>
+      <div class="container">
+        <p>{{tournament.date}}</p>
+      </div>
+      <p><b><u>קונסולה:</u></b></p>
+      <div class="container">
+        <p>{{tournament.consoleType}}</p>
+      </div>
+      <p><b><u>רשימת הפרסים:</u></b></p>
+      <ul>
+        <li ng-repeat="trophy in tournament.trophys track by $index">{{trophy.headLine + ' ' + trophy.amount}} שח</li>
+      </ul>
+      <p><b><u>מחיר:</u></b></p>
+      <div class="container">
+        <p>{{tournament.price}}</p>
+      </div>
+    </div>
+
+    <div class="container col-sm-6">
+      <h1>רשימת שחקנים:</h1>
+    
+    </div>
   </div>
   <button ng-click="registerTournament()" class="btn btn-info">הצטרף</button>
   <button ng-click="cancel()" class="btn btn-warning">חזור</button>
-</div>
+<div>
