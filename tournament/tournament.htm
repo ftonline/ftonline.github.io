@@ -13,6 +13,10 @@
   <ul>
     <li ng-repeat="trophy in tournament.trophys track by $index">{{trophy.headLine + ' ' + trophy.amount}} שח</li>
   </ul>
+  <p><b><u>מחיר:</u></b></p>
+  <div class="container">
+    <p>{{tournament.price}}</p>
+  </div>
   <button ng-click="registerTournament()" class="btn btn-info">הצטרף</button>
   <button ng-click="cancel()" class="btn btn-warning">חזור</button>
 </div>
