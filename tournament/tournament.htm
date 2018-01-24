@@ -23,7 +23,9 @@
 
     <div class="container col-sm-6">
       <h1>רשימת שחקנים:</h1>
-    
+      <ul>
+        <li ng-repeat="user in tournament.users track by $index">{{user.firstName + ' ' + user.lastName + '(' + user.fifaUser + ')'}}</li>
+      </ul>
     </div>
   </div>
   <button ng-click="registerTournament()" class="btn btn-info">הצטרף</button>
