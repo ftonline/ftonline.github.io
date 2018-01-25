@@ -19,6 +19,7 @@ angular.
       signInHttp = $http;
       signInScope = $scope;
       signInScope.isSinedIn = false;
+      signInScope.isUpdateGame = false;
 
       gapi.signin2.render('g-signin2', options)
     }
@@ -42,7 +43,7 @@ function onSignIn(googleUser) {
   signInHttp.get('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec?func=getTournamentInfoForUser&userId='+profile.getId())
     .then(function(response){
       console.log(response.data);
-      signInScope.isUpdateGame = (response.data.isUpdateGame == 'true');
+      signInScope.isUpdateGame = response.data.isUpdateGame;
     });
 
 
