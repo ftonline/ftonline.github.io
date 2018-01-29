@@ -1,4 +1,4 @@
-angular.module("myApp", ["ngRoute","signIn","editUser","tournaments","tournament"], function($httpProvider) {
+angular.module("myApp", ["ngRoute","signIn","editUser","tournaments","tournament","matchGame"], function($httpProvider) {
   // Use x-www-form-urlencoded Content-Type
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 

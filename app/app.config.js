@@ -15,14 +15,8 @@ angular.module("myApp").config(function($routeProvider) {
     .when("/green", {
         templateUrl : "app/green.htm"
     })
-    .when("/map", {
-        template : '<senagog-map></senagog-map>'
-    })
-    .when("/add-senagog", {
-        template : '<add-senagog></add-senagog>'
-    })
-    .when("/zmanim", {
-        template : '<zmanim></zmanim>'
+    .when("/matchgame", {
+        template : '<match-game></match-game>'
     })
     .when("/blue/:bookId/ch/:chapterId", {
         templateUrl : "app/blue.htm",
