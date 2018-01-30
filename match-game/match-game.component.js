@@ -19,7 +19,12 @@ angular.
           +'&token='+id_token)
     	  .then(function(response){
       	    console.log(response.data);
-            $scope = response.data.game;
+            $scope.game = response.data.game;
+            if ($scope.game.player1 == 'YOU') {
+              $scope.game.oponentUser = $scope.game.player2
+            } else {
+              $scope.game.oponentUser = $scope.game.player1
+            }
 	  });
       }
 
