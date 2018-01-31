@@ -25,8 +25,10 @@ angular.
 	  });
       }
 
+      gapi.auth2.getAuthInstance().then(function(){$scope.getMatchGame();});
 
-      $scope.getMatchGame();
+
+      
 
 
       var interval = $interval(function() {
