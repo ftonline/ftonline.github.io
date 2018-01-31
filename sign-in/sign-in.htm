@@ -3,5 +3,5 @@
   <div id="g-signin2" data-onsuccess="onSignIn" ng-hide="isSinedIn"></div>
   <button type="button" onclick="signOut()" ng-show="isSinedIn" class="btn btn-info">התנתק</button>
   <a class="btn btn-info" ng-show="isSinedIn" href="#!updateUser">ערוך</a>
-  <a class="btn btn-success" ng-show="isUpdateGame" href="#!matchgame">עדכן משחק</a>
+  <a class="btn btn-success" ng-show="isUpdateGame&&isSinedIn" href="#!matchgame">עדכן משחק</a>
 </div>

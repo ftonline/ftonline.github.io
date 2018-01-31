@@ -24,10 +24,7 @@ angular.
       gapi.signin2.render('g-signin2', options)
     }
   });
-        
-
-
-
+    
 
 function onSignIn(googleUser) {
   signInScope.isSinedIn = true;
