@@ -14,7 +14,7 @@ angular.
 	  		var data = {token:id_token,func:'updateUser', firstName:$scope.applicationData.user.firstName,
 	    	lastName:$scope.applicationData.user.lastName, phone:$scope.applicationData.user.phone, fifaUser:$scope.applicationData.user.fifaUser};
 	  		console.log(data);
-	  		signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec', data)
+	  		signInHttp.post(SERVER_URL, data)
     	  	.then(function(response){
       	    console.log(response.data);
 	    			window.location.href = '#!';

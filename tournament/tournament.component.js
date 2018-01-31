@@ -15,7 +15,7 @@ angular.
         
 	console.log(data);
 
-        signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec', data)
+        signInHttp.post(SERVER_URL, data)
     	  .then(function(response){
       	    console.log(response.data);
 	    window.location.href = '#!';
@@ -23,7 +23,7 @@ angular.
       }
 
 
-      $http.get('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec?func=getTournament&tournamentId=' + $routeParams.tournamentId)
+      $http.get(SERVER_URL+'?func=getTournament&tournamentId=' + $routeParams.tournamentId)
         .then(function(response){
           console.log(response.data);
           $scope.tournament = response.data;

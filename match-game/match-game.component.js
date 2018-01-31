@@ -12,7 +12,7 @@ angular.
       $scope.getMatchGame = function() {
         var id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
 
-        $http.get('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec?func=getMatchGame'
+        $http.get(SERVER_URL+'?func=getMatchGame'
           +'&token='+id_token)
     	  .then(function(response){
       	    console.log(response.data);

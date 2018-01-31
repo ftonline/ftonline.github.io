@@ -40,14 +40,14 @@ function onSignIn(googleUser) {
   var data = {token:id_token,func:'retrieveUser'};
   
   var userId = String(profile.getId());
-  signInHttp.get('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec?func=getTournamentInfoForUser&userId='+profile.getId())
+  signInHttp.get(SERVER_URL+'?func=getTournamentInfoForUser&userId='+profile.getId())
     .then(function(response){
       console.log(response.data);
       signInScope.isUpdateGame = response.data.isUpdateGame;
     });
 
 
-  signInHttp.post('https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQHVsuniIZlxUmHVwlwmTEnu86dwNjZvW/exec', data)
+  signInHttp.post(SERVER_URL, data)
     .then(function(response){
       applicationData.user = response.data;
       signInScope.userName = response.data.firstName;
