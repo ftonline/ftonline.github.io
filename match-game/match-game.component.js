@@ -12,8 +12,7 @@ angular.
       $scope.getMatchGame = function() {
         var id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
 
-        $http.get(SERVER_URL+'?func=getMatchGame'
-          +'&token='+id_token)
+        $http.get(SERVER_URL+'?func=getMatchGame&token='+id_token)
     	  .then(function(response){
       	    console.log(response.data);
             $scope.game = response.data.game;
@@ -22,14 +21,17 @@ angular.
             } else {
               $scope.game.oponentUser = $scope.game.player1
             }
-	  });
+	      });
       }
 
-
+      var isGapiLoaded = false;
       gapi.load('auth2', function() {
         var params = {client_id: getVideoContent('google-signin-client_id')};
         gapi.auth2.init(params);
-        gapi.auth2.getAuthInstance().then(function(){$scope.getMatchGame();});
+        gapi.auth2.getAuthInstance().then(function(){
+          $scope.getMatchGame();
+          isGapiLoaded = true;
+        });
       });
 
 
@@ -37,7 +39,8 @@ angular.
 
 
       var interval = $interval(function() {
-        console.log('tfuBlat');
+        if(!isGapiLoaded) return;
+        $scope.getMatchGame();
       }, 5000);
 
 
