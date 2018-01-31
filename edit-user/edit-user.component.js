@@ -4,6 +4,7 @@ angular.
   component('editUser', {
     templateUrl : "edit-user/edit-user.htm",
     controller : function ($scope, $http) {
+			
 			$scope.applicationData = applicationData;
 			$scope.cancel = function() {
 				window.location.href = '#!';
@@ -16,7 +17,7 @@ angular.
 	  		console.log(data);
 	  		signInHttp.post(SERVER_URL, data)
     	  	.then(function(response){
-      	    console.log(response.data);
+      	    		console.log(response.data);
 	    			window.location.href = '#!';
 				});
 			}
