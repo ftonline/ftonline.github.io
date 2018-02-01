@@ -14,13 +14,7 @@ angular.
 
         $http.get(SERVER_URL+'?func=getMatchGame&token='+id_token)
     	  .then(function(response){
-      	    console.log(response.data);
             $scope.game = response.data.game;
-            if ($scope.game.player1 == 'YOU') {
-              $scope.game.oponentUser = $scope.game.player2
-            } else {
-              $scope.game.oponentUser = $scope.game.player1
-            }
 	      });
       }
 
@@ -57,7 +51,15 @@ angular.
         }
       };
 
-      
+      $scope.checkinMatchGame = function() {
+        var id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
+        var data = {token:id_token,func:'checkinMatchGame'};
+        
+        $http.post(SERVER_URL, data)
+    	  	.then(function(response){
+      	    console.log(response.data);
+				});
+      }
 
     }
 
