@@ -20,7 +20,7 @@ angular.
 
       var isGapiLoaded = false;
       gapi.load('auth2', function() {
-        var params = {client_id: getVideoContent('google-signin-client_id')};
+        var params = {client_id: getMetaContent('google-signin-client_id')};
         gapi.auth2.init(params);
         gapi.auth2.getAuthInstance().then(function(){
           $scope.getMatchGame();

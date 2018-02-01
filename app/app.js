@@ -6,7 +6,7 @@ const SERVER_URL = 'https://script.google.com/macros/s/AKfycbyILJZ7cIl5yq0GQycXQ
 /**
  * 
  */
-function getVideoContent(metaData) { 
+function getMetaContent(metaData) { 
    var metas = document.getElementsByTagName('meta'); 
    
    for (var i=0; i<metas.length; i++) { 
@@ -18,6 +18,3 @@ function getVideoContent(metaData) {
     return "";
 } 
 
-var isGapiLoaded = false;
-
-gapi.load('auth2', function() {isGapiLoaded = true});
