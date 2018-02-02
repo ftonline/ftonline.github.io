@@ -2,8 +2,9 @@
   <h2>המשחק הבא</h2>
   <h2>נגד - {{game.oponentUser}}</h2>
   <a class="btn btn-danger" ng-click="checkinMatchGame()">הירשמות למשחק</a>
+  <i ng-show="game.userCheckedIn=='checkedIn'" class="fa fa-check" style="font-size:48px;color:rgb(43, 157, 250)">אתה מחובר</i>
   <a class="btn btn-danger">עדכן משחק</a>
   <div ng-show="game.oponentCheckedIn=='checkedIn'">
-    oponentCheckedIn
+    <i class="fa fa-check" style="font-size:48px;color:rgb(43, 157, 250)">היריב מחובר</i>
   </div>
 </div>
