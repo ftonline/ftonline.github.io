@@ -28,10 +28,6 @@ angular.
         });
       });
 
-
-      
-
-
       var interval = $interval(function() {
         if(!isGapiLoaded) return;
         $scope.getMatchGame();
@@ -62,8 +58,23 @@ angular.
       }
 
       $scope.numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
-      
 
+      $scope.openmyModal = function() {
+        $('#myModal').modal('show');
+      }
+
+      $scope.oponentScore = '0';
+      $scope.userScore = '0';
+
+      $scope.updateScoreMatchGame = function() {
+        var id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
+        var data = {token:id_token,func:'updateScoreMatchGame',oponentScore:$scope.oponentScore, userScore:$scope.userScore};
+        console.log(data);
+        $http.post(SERVER_URL, data)
+    	  	.then(function(response){
+      	    console.log(response.data);
+				});
+      }
     }
 
 

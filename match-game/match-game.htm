@@ -12,13 +12,36 @@
   </div>
   <div ng-show="game.oponentCheckedIn=='checkedIn' && game.userCheckedIn=='checkedIn'">
     <label for="male">אתה:</label>
-    <select>
+    <select ng-model="userScore">
       <option ng-repeat="i in numbers">{{$index}}</option>
     </select>
     <label for="male">היריב:</label>
-    <select>
+    <select ng-model="oponentScore">
       <option ng-repeat="i in numbers">{{$index}}</option>
     </select>
-    <a class="btn btn-danger">עדכן משחק</a>
+    <a class="btn btn-danger" ng-click="updateScoreMatchGame()">עדכן משחק</a>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">אישור תוצאה</h4>
+        </div>
+        <div class="modal-body">
+          <p>תוצאת המשחק היא:</p>
+          <p>אתה: 0 היריב: 3</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">מאשר</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">ביטול</button>
+        </div>
+      </div>
+      
+    </div>
   </div>
 </div>
