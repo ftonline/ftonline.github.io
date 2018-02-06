@@ -18,3 +18,9 @@ function getMetaContent(metaData) {
     return "";
 } 
 
+
+
+
+function isEmptyString(str) {
+    return (!str || 0 === str.length);
+}

@@ -15,6 +15,9 @@ angular.
         $http.get(SERVER_URL+'?func=getMatchGame&token='+id_token)
     	  .then(function(response){
             $scope.game = response.data.game;
+            console.log($scope.game);
+
+            $scope.showConfirmationModel();
 	      });
       }
 
@@ -59,9 +62,24 @@ angular.
 
       $scope.numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 
-      $scope.openmyModal = function() {
+      $scope.showConfirmationModel = function() {
+        $scope.game;
+        if (isEmptyString($scope.game.userScore)) {
+          return;
+        }
+
+        if ($scope.oOponentScore == $scope.game.oponentScore && $scope.oUserScore == $scope.game.userScore) {
+          return;
+        }
+
+        $scope.oOponentScore = $scope.game.oponentScore;
+        $scope.oUserScore = $scope.game.userScore;
+
         $('#myModal').modal('show');
       }
+
+      $scope.oOponentScore = '';
+      $scope.oUserScore = '';
 
       $scope.oponentScore = '0';
       $scope.userScore = '0';
