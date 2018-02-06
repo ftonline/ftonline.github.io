@@ -19,7 +19,7 @@
     <select ng-model="oponentScore">
       <option ng-repeat="i in numbers">{{$index}}</option>
     </select>
-    <a class="btn btn-danger" ng-click="updateScoreMatchGame()">עדכן משחק</a>
+    <a class="btn btn-danger" ng-click="updateScoreMatchGame(userScore,oponentScore)">עדכן משחק</a>
   </div>
 
   <!-- Modal -->
@@ -37,7 +37,7 @@
           <p>אתה: {{oUserScore}} היריב: {{oOponentScore}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">מאשר</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="updateScoreMatchGame(oUserScore,oOponentScore)">מאשר</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">ביטול</button>
         </div>
       </div>

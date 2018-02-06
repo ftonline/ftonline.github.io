@@ -84,9 +84,9 @@ angular.
       $scope.oponentScore = '0';
       $scope.userScore = '0';
 
-      $scope.updateScoreMatchGame = function() {
+      $scope.updateScoreMatchGame = function(iuserScore, ioponentScore) {
         var id_token = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
-        var data = {token:id_token,func:'updateScoreMatchGame',oponentScore:$scope.oponentScore, userScore:$scope.userScore};
+        var data = {token:id_token,func:'updateScoreMatchGame',oponentScore:ioponentScore, userScore:iuserScore};
         console.log(data);
         $http.post(SERVER_URL, data)
     	  	.then(function(response){
