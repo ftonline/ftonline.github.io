@@ -15,7 +15,7 @@ angular.
         $http.get(SERVER_URL+'?func=getMatchGame&token='+id_token)
     	  .then(function(response){
             $scope.game = response.data.game;
-            console.log($scope.game);
+            console.log(response);
 
             $scope.showConfirmationModel();
 	      });
@@ -34,6 +34,7 @@ angular.
       var interval = $interval(function() {
         if(!isGapiLoaded) return;
         $scope.getMatchGame();
+        $scope.getLeagueTables();
       }, 5000);
 
 
@@ -93,6 +94,18 @@ angular.
       	    console.log(response.data);
 				});
       }
+
+      $scope.leags = [];
+      
+      $scope.getLeagueTables = function() {
+        $http.get(SERVER_URL+'?func=getLeagueTables').then(function(response) {
+          console.log(response.data);
+          $scope.leags = response.data;
+        });
+      }
+
+      $scope.getLeagueTables();
+
     }
 
 

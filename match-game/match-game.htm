@@ -22,6 +22,35 @@
     <a class="btn btn-danger" ng-click="updateScoreMatchGame(userScore,oponentScore)">עדכן משחק</a>
   </div>
 
+
+  <div ng-repeat="league in leags track by $index">
+    <h3>group {{league.League}}</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>שחקן</th>
+          <th>נצחונות</th>
+          <th>תקו</th>
+          <th>הפסדים</th>
+          <th>זכות</th>
+          <th>חובה</th>
+          <th>נקודות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="stand in league.standing track by $index">
+          <td>{{stand.userName}}</td>
+          <td>{{stand.W}}</td>
+          <td>{{stand.D}}</td>
+          <td>{{stand.L}}</td>
+          <td>{{stand.GF}}</td>
+          <td>{{stand.GA}}</td>
+          <td>{{stand.P}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -41,7 +70,8 @@
           <button type="button" class="btn btn-danger" data-dismiss="modal">ביטול</button>
         </div>
       </div>
-      
     </div>
   </div>
+
+
 </div>
