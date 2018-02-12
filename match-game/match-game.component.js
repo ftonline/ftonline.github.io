@@ -98,7 +98,11 @@ angular.
       $scope.leags = [];
       
       $scope.getLeagueTables = function() {
-        $http.get(SERVER_URL+'?func=getLeagueTables').then(function(response) {
+        if ($scope.game == undefined) {
+          return;
+        }
+        $http.get(SERVER_URL+'?func=getLeagueTables&tournamentId=' + $scope.game.tournamentId + '&groupName=' + $scope.game.group)
+        .then(function(response) {
           console.log(response.data);
           $scope.leags = response.data;
         });
