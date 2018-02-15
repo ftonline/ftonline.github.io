@@ -35,6 +35,7 @@ angular.
         if(!isGapiLoaded) return;
         $scope.getMatchGame();
         $scope.getLeagueTables();
+        $scope.getGamesWithNames();
       }, 5000);
 
 
@@ -101,37 +102,52 @@ angular.
         if ($scope.game == undefined) {
           return;
         }
-        $http.get(SERVER_URL+'?func=getLeagueTables&tournamentId=' + $scope.game.tournamentId + '&groupName=' + $scope.game.group)
+
+        var url = SERVER_URL+'?func=getLeagueTables&tournamentId=' + $scope.game.tournamentId + '&groupName=' + $scope.game.group;
+        console.log(url);
+        $http.get(url)
         .then(function(response) {
           console.log(response.data);
           $scope.leags = response.data;
         });
-      }
+      };
 
       $scope.getLeagueTables();
 
+      $scope.gamesWithNames = [];
+
+      $scope.getGamesWithNames = function() {
+        if ($scope.game == undefined) {
+          return;
+        }
+
+        var url = SERVER_URL+'?func=getGamesWithNames&tournamentId=' + $scope.game.tournamentId + '&groupName=' + $scope.game.group;
+        $http.get(url)
+        .then(function(response) {
+          console.log(response.data);
+          $scope.gamesWithNames = response.data;
+        });
+      };
+
+
+      $scope.printScore = function(score) {
+        if (isEmptyString(score)) {
+          return '';
+        }
+        var strArr = score.split('$');
+        return strArr[0] + ' - ' + strArr[1];
+      }
+
+
+      $scope.printStatus = function(game) {
+        if (!isEmptyString(game.score)) {
+          return 'סיום';
+        }
+        if (game.player1checkin == "checkedIn" && game.player2checkin == "checkedIn") {
+          return 'משוחק כעת';
+        }
+        return 'טרם התחיל';
+      }
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   });

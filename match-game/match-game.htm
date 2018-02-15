@@ -1,4 +1,4 @@
-<div class="container text-center">  
+<div class="container text-center" align="center">  
   <h2>המשחק הבא</h2>
   <h2>נגד - {{game.oponentUser}}</h2>
   <a ng-show="game.userCheckedIn!='checkedIn'" class="btn btn-danger" ng-click="checkinMatchGame()">הירשמות למשחק</a>
@@ -22,6 +22,25 @@
     <a class="btn btn-danger" ng-click="updateScoreMatchGame(userScore,oponentScore)">עדכן משחק</a>
   </div>
 
+  <div>
+    <h3 ng-show="gamesWithNames[0]!=undefined">תוצאות LIVE</h3>
+    <h3 ng-show="gamesWithNames[0]!=undefined">group {{gamesWithNames[0].group}}</h3>
+    <center>
+    <table>
+      <tbody>
+        <tr bgcolor="#F5F4F4" ng-repeat="game in gamesWithNames | orderBy:['cycle']">		
+          <td width="0" align="center"></td>		
+          <td width="30" align="center"></td>		
+          <td align="left" width="90" dir="rtl">מחזור {{game.cycle}}</td>
+          <td align="left" width="90" dir="rtl">{{game.player1}}</td>
+          <td style="display:block;width:65px;" align="center" >{{printScore(game.score)}}</td>		
+          <td align="right" width="90" dir="rtl">{{game.player2}}</td>		
+          <td width="105" height="18" align="right" dir="rtl">{{printStatus(game)}}<span style="color:#757575"></span> 		</td>				
+        </tr>
+      </tbody>
+    </table>
+    </center>
+  </div>
 
   <div class="table-responsive" ng-repeat="league in leags track by $index">
     <h3>group {{league.League}}</h3>
